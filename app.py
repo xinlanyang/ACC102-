@@ -25,7 +25,7 @@ def load_financial_data():
       AND indfmt='INDL' AND datafmt='STD' AND consol='C'
     ORDER BY tic, fyear
     """
-
+    st.write("读取到的用户名：", st.secrets["wrds"]["username"])
     df = db.raw_sql(query)
     db.close()
     return df  
