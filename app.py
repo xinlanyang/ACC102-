@@ -8,28 +8,30 @@ import os
 st.set_page_config(page_title="Beverage Financial Analysis", page_icon="☕", layout="wide")
 st.title("☕ Beverage Industry Financial Analysis (2019–2024)")
 st.markdown("---")
-
-
 @st.cache_data(show_spinner="Loading data from WRDS...")
 def load_financial_data():
-    username= st.secrets["wrds"]["username"]
-    password= st.secrets["wrds"]["password"]
-    db=wrds.Connection(username=username,password=password)
+    username = st.secrets["wrds"]["username"]
+    password = st.secrets["wrds"]["password"]
+    db = wrds.Connection(username=username, password=password)
+
     tickers = ["SBUX", "NSRGF", "KO", "PEP", "KDP"]
     start_year, end_year = 2019, 2024
 
     query = f"""
-        SELECT tic, fyear, ib, at, ceq, ebit, dlc, revt
-        FROM comp.funda
-        WHERE tic IN ({','.join([f"'{t}'" for t in tickers])})
-          AND fyear BETWEEN {start_year} AND {end_year}
-          AND indfmt='INDL' AND datafmt='STD' AND consol='C'
-        ORDER BY tic, fyear
+    SELECT tic, fyear, ib, at, ceq, ebit, dlc, revt
+    FROM comp.funda
+    WHERE tic IN ({','.join([f"'{t}'" for t in tickers])})
+      AND fyear BETWEEN {start_year} AND {end_year}
+      AND indfmt='INDL' AND datafmt='STD' AND consol='C'
+    ORDER BY tic, fyear
     """
 
     df = db.raw_sql(query)
     db.close()
+    return df  
 
+
+    
     
     df["ROE"] = df["ib"] / df["ceq"]
     df["ROA"] = df["ib"] / df["at"]
