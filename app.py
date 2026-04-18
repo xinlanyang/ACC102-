@@ -12,8 +12,8 @@ st.markdown("---")
 
 @st.cache_data(show_spinner="Loading data from WRDS...")
 def load_financial_data():
-   username= st.secrets["wrds"]["username"]
-    password= st.secrets["wrds"]["password"]
+username= st.secrets["wrds"]["username"]
+password= st.secrets["wrds"]["password"]
 db=wrds.Connection(username=username,password=password)
     tickers = ["SBUX", "NSRGF", "KO", "PEP", "KDP"]
     start_year, end_year = 2019, 2024
