@@ -5,14 +5,14 @@ import matplotlib.pyplot as plt
 import os
 
 st.set_page_config(page_title="Beverage Financial Analysis", page_icon="☕", layout="wide")
-st.title("☕ Beverage Industry Financial Analysis (2019–2024)")
+st.title(" Beverage Industry Financial Analysis (2019–2024)")
 st.markdown("---")
 
 wrds_user = st.text_input("Enter your WRDS username", placeholder="Your WRDS ID")
 wrds_pwd = st.text_input("Enter your WRDS password", placeholder="Your WRDS Password", type="password")
 
 if not wrds_user or not wrds_pwd:
-    st.info("👈 Please enter your WRDS username AND password to load data")
+    st.info(" Please enter your WRDS username AND password to load data")
     st.stop()
 
 
@@ -87,7 +87,7 @@ st.markdown("---")
 colors = ['#ff6b6b','#f7c843','#4ecdc4','#6c5ce7','#2ecc71']
 
 # Plot 1: ROE Trend
-st.subheader("📈 ROE Trend (2019–2024)")
+st.subheader(" ROE Trend (2019–2024)")
 fig1, ax1 = plt.subplots(figsize=(12,5))
 for tic in df["tic"].unique():
     sub = df[df["tic"] == tic]
