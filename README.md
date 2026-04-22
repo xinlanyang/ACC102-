@@ -3,48 +3,48 @@
 Interactive Analysis Project on Financial Performance of Leading Enterprises in the Beverage Industry 
 ## 1.Problem & User
 This project is designed for enterprise financial analysis and industry benchmarking scenarios, targeting business course learners, beginners in financial analysis, and industry investors. Currently, the competition in the coffee beverage industry is intensifying, making it difficult for investors and learners to intuitively compare the multi-year profit performance of multiple leading companies. This project creates a lightweight interactive dashboard to quickly assess the financial capabilities of multiple companies across multiple years, assisting in business decision-making.
-## 2.Data
+## 2. Data
 • Data source: WRDS Compustat Global Listed Companies Standard Financial Database
 • Access date: April 2026
 • Time range: Complete fiscal years from 2019 to 2024
-• Target companies: Starbucks (SBUX), Nestlé (NSRGF), Coca-Cola (KO), Pepsi (PEP), Keurig Dr Pepper (KDP)
+• Target companies: Starbucks (SBUX), Coca-Cola (KO), PepsiCo (PEP), Keurig Dr Pepper (KDP)
 • Key fields: Stock code, fiscal year, net profit, total assets, shareholders' equity, EBIT, short-term liabilities, operating income
-• Data preprocessing: Remove missing values, filter extreme outliers to ensure the validity of the indicators.
+• Data preprocessing: Remove missing values, filter extreme outliers to ensure the validity of all analysis indicators and visual charts.
 ### 3. Methods
-1. Build a web interactive dashboard without front-end code and with quick running using Python + Streamlit.
-2. Pull standardized annual financial data in batches remotely through the official WRDS API.
-3. Calculate four core profitability indicators: ROE, ROA, ROC, and net profit margin.
-4. Use Matplotlib to draw trend line charts, grouped bar charts, and revenue proportion pie charts.
-5. Add a local cache mechanism to significantly improve page loading speed.
-6. Support one-click Excel export, raw data preview, and cache reset and refresh. 
-## 4. Key Findings
-The top five beverage companies have strong overall profit stability, with long-term ROE maintained in a healthy range and excellent risk resistance capabilities.
-The Starbucks brand enjoys a prominent premium, leading in net profit margin and asset operation efficiency among the samples.
-Coca-Cola and PepsiCo have a significant revenue gap ahead, occupying the majority of the market share in the industry.
-The industry's overall profit has fluctuated slightly over the past five years without a significant decline, indicating a high level of industry maturity.
-The differences in business strategies among various enterprises are directly reflected in the obvious differentiation of capital structure and return indicators. 
-## 5. How to run
-Warehouse file structure README.md
-app.py
-requirements.txt
-data/ (cache data files)
-figures/ (chart output) 
+1. Build an interactive web analysis dashboard based on Python + Streamlit, which can be launched locally without front-end code.
+2. Call the official WRDS API to remotely and batchly obtain standardized annual financial raw data of 4 specified enterprises in compliance.
+3. Automatically calculate four core profitability indicators: ROE, ROA, ROC, and net profit margin.
+4. Use Matplotlib to generate 6 sets of professional visual charts covering all operational dimensions, including trend line charts, grouped comparison bar charts, and market share pie charts.
+5. Configure a local data cache mechanism to greatly reduce the waiting time for repeated data loading and improve page fluency.
+6. Built-in custom analysis year range slider, all charts and indicators are automatically updated synchronously with the selected time period.
+7. Support one-click export of filtered full financial data to Excel, and open an online entry for viewing complete raw data tables.
+### 4. Key Findings
+1. The four leading beverage companies included in the analysis have strong overall profitability, with long-term ROE maintained in a healthy and reasonable range, and the industry has strong overall anti-operational risk capabilities.
+2. Starbucks has a prominent brand premium, leading in net profit margin and asset operation efficiency among all sample companies.
+3. Coca-Cola and PepsiCo have a leading advantage in operating income, occupying most of the beverage industry's market revenue share.
+4. The overall profit level of the industry fluctuated slightly and steadily during the 5-year period from 2019 to 2024, with no large-scale decline, and the beverage industry has a high degree of maturity.
+5. The differentiated business layout and market strategies of various enterprises are directly reflected in the obvious differences in core financial indicators such as corporate capital structure and profit return.
+## 5. How to Run
+### Warehouse File Structure
+1.requirement.txt
+2.app.py
 ### Running Steps
-1. Install the required dependency libraries for the project: pip install streamlit wrds pandas matplotlib openpyxl
-2. Enter your valid WRDS account in the code. 
-3. Enter the startup command at the terminal: streamlit run app.py
-4. Open http://localhost:8501 in your local browser to use all the functions. 
-## 6. Product link / Demo
-You can experience the complete interactive functions by running it locally. 
-Supports one-click deployment to Streamlit Cloud later, generating a permanent public online demo link for easy access and sharing at any time. 
-## 7. Limitations & next steps
+1. Open the terminal and install all required dependencies:
+pip install streamlit wrds pandas matplotlib openpyxl
+2. Prepare a valid WRDS database account and password in advance.
+3. Save the complete code as app.py in a local folder, and enter the folder directory in the terminal.
+4. Run the startup command in the terminal: streamlit run app.py
+5. The local browser will open automatically. Enter the WRDS account and password, wait for the data to load, and you can use all functions such as data analysis, chart viewing, and data export.
+6. Product Link / Demo
+All interactive functions can be fully experienced by running locally. This project can be deployed to Streamlit Cloud with one click later, generating a permanent public online demo link for easy access and sharing at any time without local environment configuration.
+## 7. Limitations & Next Steps
 ### Limitations
-The sample only includes five leading enterprises, and the breadth of industry coverage is limited. 
-Only annual financial data was used, without incorporating quarterly high-frequency data and stock price performance. 
-No regression analysis was conducted in combination with external influencing factors such as macroeconomics and consumption indices. 
-### Next steps
-1. Expand the sample of enterprises in more industries and extend the time span of the analysis.
-2. Add multi-dimensional financial indicators such as debt-paying ability, growth ability, and cash flow.
-3. Integrate AI large models to achieve automatic interpretation of financial data and intelligent generation of analysis reports.
-4. Add human-computer interaction filtering functions such as custom years and multiple company selections.
-5. Complete stable cloud deployment and launch a publicly accessible version.
+1. The analysis sample only selects 5 leading enterprises in the beverage industry, and the coverage of the entire category and industry is insufficient.
+2. Only annual summary financial data is used for analysis, and quarterly high-frequency operating data and stock price performance data are not included for linkage analysis.
+3. No in-depth regression modeling analysis is conducted in combination with external influencing factors such as macroeconomic trends and consumer price indices.
+### Next Steps
+1. Expand the sample of listed companies in multiple categories and industries, and extend the statistical period of financial data to broaden the analysis boundary.
+2. Add multi-dimensional financial analysis indicators such as corporate solvency, growth rate, and cash flow health to improve the analysis system.
+3. Integrate AI large models to realize automatic labeling of abnormal financial data and automatic generation of industry operation analysis reports.
+4. Upgrade interactive functions, add custom high-level operations such as independent selection of comparison enterprises and multi-dimensional indicator filtering.
+5. Complete stable cloud deployment and launch a publicly accessible online version.
