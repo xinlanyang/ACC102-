@@ -37,7 +37,7 @@ pip install streamlit wrds pandas matplotlib openpyxl
 5. The local browser will open automatically. Enter the WRDS account and password, wait for the data to load, and you can use all functions such as data analysis, chart viewing, and data export.
 6. Product Link / Demo
 All interactive functions can be fully experienced by running locally. This project can be deployed to Streamlit Cloud with one click later, generating a permanent public online demo link for easy access and sharing at any time without local environment configuration.
-## 7. Limitations & Next Steps
+## 6. Limitations & Next Steps
 ### Limitations
 1. The analysis sample only selects 5 leading enterprises in the beverage industry, and the coverage of the entire category and industry is insufficient.
 2. Only annual summary financial data is used for analysis, and quarterly high-frequency operating data and stock price performance data are not included for linkage analysis.
